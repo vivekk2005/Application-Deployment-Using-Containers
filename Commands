@@ -1,0 +1,31 @@
+export PS1="12319700@[\u2026]\$"
+echo 'export PS1="12319700@[\u2026]\$"' >> ~/.bashrc
+source ~/.bashrc
+
+sudo dnf install -y podman
+podman --version
+
+mkdir -p ~/project-container-deployment/html
+nano ~/project-container-deployment/html/index.html
+
+podman run -d --name nginx-custom -p 8080:80 -v ~/project-container-deployment/html:/usr/share/nginx/html:Z docker.io/library/nginx:latest
+podman ps
+
+podman generate systemd --name nginx-custom --files --new
+sudo mv container-nginx-custom.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now container-nginx-custom.service
+systemctl status container-nginx-custom.service
+
+sudo reboot
+
+podman ps
+systemctl status container-nginx-custom.service
+podman rm -f nginx-custom
+
+git init
+git add .
+git commit -m "Container Deployment Project - Vivek 12319700"
+git branch -M main
+git remote add origin <your-repository-url>
+git push -u origin main
