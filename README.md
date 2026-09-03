@@ -1,5 +1,7 @@
 # Podman Nginx Container Deployment
 
+![Podman](https://img.shields.io/badge/-Podman-892CA0?style=flat-square&logo=podman&logoColor=white) ![Nginx](https://img.shields.io/badge/-Nginx-009639?style=flat-square&logo=nginx&logoColor=white) ![Linux](https://img.shields.io/badge/-Linux-FCC624?style=flat-square&logo=linux&logoColor=black) ![systemd](https://img.shields.io/badge/-systemd-white?style=flat-square)
+
 ## 📌 Project Overview
 This project demonstrates deployment of an Nginx web server using Podman containers with persistent storage and systemd auto-start.
 
@@ -39,5 +41,9 @@ http://localhost:8080
 - Data persists after reboot
 - Systemd auto-start works correctly
 
-## 🔗 Author
-Vivek K
+---
+
+## 👤 Author
+
+**Vivek K**
+[GitHub](https://github.com/vivekk2005) · [LinkedIn](https://linkedin.com/in/vivekkannoth) · vivekkannoth5678@gmail.com
